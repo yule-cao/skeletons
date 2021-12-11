@@ -7,8 +7,9 @@
     "outDir": "build",
     "strict": true,
     "sourceMap": true,
-    "noImplicitAny": true
+    "noImplicitAny": true,
+    "esModuleInterop": true
   },
-  "include": ["src/**/*"],
+  "include": ["src/main/*"],
   "exclude": ["node_modules"]
 }

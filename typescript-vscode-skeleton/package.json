@@ -4,19 +4,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsc && node build/main/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run build && node build/main/index.js",
+    "test": "jest",
+    "build": "tsc",
+    "cq": "npm run cq:eslint",
+    "cq:eslint": "eslint ."
   },
   "author": "Yu Cao",
   "license": "MIT",
   "type": "module",
   "devDependencies": {
+    "@types/jest": "^27.0.3",
     "@typescript-eslint/eslint-plugin": "^5.5.0",
     "@typescript-eslint/parser": "^5.5.0",
     "eslint": "^8.4.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^27.4.4",
     "prettier": "^2.5.1",
+    "ts-jest": "^27.1.1",
     "typescript": "^4.5.2"
   }
 }
