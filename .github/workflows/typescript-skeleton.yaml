@@ -1,0 +1,52 @@
+# This is a workflow skeleton for TypeScript NodeJS projects, incudling jobs of
+# installing dependencies, lint codes and running tests.
+
+name: TypeScript skeleton
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  cq:
+    name: Code quality
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: typescript-vscode-skeleton
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up NodeJS
+        uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+      - name: Install dependencies
+        run: npm install
+      - name: Code style - ESLint
+        run: npm run cq:eslint
+
+  validation:
+    name: Validation
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: typescript-vscode-skeleton
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: npm install
+      - name: Unit test
+        run: npm run test
+
+  required:
+    runs-on: ubuntu-latest
+    name: Required
+    needs:
+      - cq
+      - validation
+    steps:
+      - run: echo All required jobs succeeded.
