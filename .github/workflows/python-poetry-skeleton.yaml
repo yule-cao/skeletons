@@ -1,0 +1,36 @@
+# This is a workflow skeleton for Python projects managed by Poetry,
+# incudling jobs of installing dependencies, lint codes and running tests.
+
+name: Python Poetry skeleton
+
+on:
+  - push
+  - pull_request
+
+jobs:
+  cq:
+    name: Code quality
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: python-pycharm-poetry-skeleton
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install poetry
+        run: pipx install poetry
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+          # cache: 'poetry'
+      - name: Install dependencies
+        run: poetry install
+      - name: Code style - Black
+        run: poetry run black --check --verbose src
+
+  required:
+    runs-on: ubuntu-latest
+    name: Required
+    needs:
+      - cq
+    steps:
+      - run: echo All required jobs succeeded.
