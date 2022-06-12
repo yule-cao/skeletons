@@ -1,7 +1,6 @@
-class World:
-    def __repr__(self):
-        return "world"
+from model import User
 
+user = User(name="YU")
 
 if __name__ == "__main__":
-    print(f"hello {World()}")
+    print(f"hello world, {user.name}")

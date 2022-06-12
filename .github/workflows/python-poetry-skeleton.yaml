@@ -27,6 +27,25 @@ jobs:
       - name: Code style - Black
         run: poetry run black --check --verbose src
 
+  validation:
+    name: Validation
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: python-pycharm-poetry-skeleton
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install poetry
+        run: pipx install poetry
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+          # cache: 'poetry'
+      - name: Install dependencies
+        run: poetry install
+      - name: Unit test
+        run: poetry run pytest
+
   required:
     runs-on: ubuntu-latest
     name: Required
