@@ -26,6 +26,8 @@ jobs:
         run: poetry install
       - name: Code style - Black
         run: poetry run black --check --verbose src
+      - name: Type checking - Mypy
+        run: poetry run mypy
 
   validation:
     name: Validation
