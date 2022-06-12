@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="PylintConfigService">
-    <option name="customPylintPath" value="D:\workspace\vscode-projects\skeletons\python-pycharm-poetry-skeleton\.venv\Scripts\pylint.exe" />
-    <option name="pylintArguments" value="--init-hook &quot;import os; import sys; sys.path.append(f'{os.getcwd()}/src/main'); sys.path.append(f'{os.getcwd()}/src/test');&quot;" />
-  </component>
-</project>
