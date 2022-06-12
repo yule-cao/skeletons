@@ -1,3 +1,5 @@
+"""Entrypoint."""
+
 from model import User
 
 user = User(name="YU")
