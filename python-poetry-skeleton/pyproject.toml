@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "python-pycharm-poetry-skeleton"
+name = "python-poetry-skeleton"
 version = "0.1.0"
 description = "Python project skeleton with Pycharm and Poetry"
 authors = ["Charlie <kntrevita@163.com>"]
