@@ -1,6 +1,6 @@
 """Unit test for domain models."""
 
-from model import User
+from skeleton.model import User
 
 
 def test_user() -> None:

@@ -27,7 +27,7 @@ jobs:
       - name: Code style - Pylint
         run: >
           poetry run pylint src
-          --init-hook "import os; import sys; sys.path.append(f'{os.getcwd()}/src/main'); sys.path.append(f'{os.getcwd()}/src/test');"
+          --init-hook "import os; import sys; sys.path.append(f'{os.getcwd()}/src');"
       - name: Code style - Black
         run: poetry run black --check --verbose src
       - name: Type checking - Mypy
