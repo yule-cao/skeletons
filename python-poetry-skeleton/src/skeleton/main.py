@@ -1,6 +1,6 @@
 """Entrypoint."""
 
-from model import User
+from skeleton.model import User
 
 user = User(name="YU")
 
